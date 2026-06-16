@@ -7,11 +7,16 @@ type ProjectCardProps = {
 
 export default function ProjectCard({ project, index }: ProjectCardProps) {
   return (
-    <article className="glass-card group grid overflow-hidden rounded-[28px] lg:grid-cols-[minmax(0,1.68fr)_minmax(320px,0.82fr)]">
-      <div className="relative min-h-[300px] overflow-hidden bg-project-placeholder md:min-h-[420px]">
+    <article
+      id={`work-${project.id}`}
+      data-stagger-card
+      className="glass-card group grid scroll-mt-28 overflow-hidden rounded-[28px] lg:grid-cols-[minmax(0,1.68fr)_minmax(320px,0.82fr)]"
+    >
+      <div data-image-reveal className="relative min-h-[300px] overflow-hidden bg-project-placeholder md:min-h-[420px]">
         <img
           src={project.image}
           alt={project.title}
+          data-parallax-image
           className="h-full w-full object-cover opacity-0 transition duration-700 group-hover:scale-[1.04]"
           onLoad={(event) => event.currentTarget.classList.remove("opacity-0")}
         />
@@ -19,7 +24,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
       </div>
 
       <div className="relative flex min-h-[300px] flex-col justify-center border-t border-white/[0.08] bg-ink-950/82 p-7 md:p-10 lg:border-l lg:border-t-0">
-        <p className="text-[clamp(3.5rem,7vw,6.5rem)] font-black leading-none text-ember-red">
+        <p className="text-[clamp(3.5rem,7vw,6.5rem)] font-black leading-none text-[#FF9A2D]">
           {String(index + 1).padStart(2, "0")}
         </p>
         <h3 className="mt-5 max-w-xl text-3xl font-black leading-tight text-white md:text-4xl">

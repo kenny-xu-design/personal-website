@@ -70,6 +70,57 @@ body {
     linear-gradient(135deg, #151923, #06070a 64%, #11141b);
 }
 
+.post-hero-bg {
+  isolation: isolate;
+  background:
+    linear-gradient(180deg, #030407 0%, #050608 38%, #020306 100%);
+}
+
+.post-hero-bg::before,
+.post-hero-bg::after {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.post-hero-bg::before {
+  opacity: 0.9;
+  background:
+    radial-gradient(ellipse at 74% 9%, rgba(255, 122, 26, 0.16), transparent 36rem),
+    radial-gradient(ellipse at 16% 28%, rgba(255, 255, 255, 0.055), transparent 34rem),
+    radial-gradient(ellipse at 58% 56%, rgba(255, 200, 87, 0.075), transparent 42rem),
+    radial-gradient(ellipse at 25% 86%, rgba(255, 77, 46, 0.12), transparent 38rem),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.035), transparent 30%, rgba(255, 122, 26, 0.07) 72%, transparent);
+  filter: saturate(1.08);
+  transform: translate3d(0, 0, 0) scale(1.08);
+  animation: postHeroMesh 22s cubic-bezier(0.45, 0, 0.18, 1) infinite alternate;
+}
+
+.post-hero-bg::after {
+  opacity: 0.16;
+  mix-blend-mode: screen;
+  background-image:
+    radial-gradient(circle, rgba(255, 255, 255, 0.42) 0 0.7px, transparent 0.8px),
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-position:
+    0 0,
+    0 0,
+    0 0;
+  background-size:
+    18px 18px,
+    56px 56px,
+    56px 56px;
+  mask-image: linear-gradient(180deg, transparent, #000 8%, #000 94%, transparent);
+}
+
+.post-hero-bg > section {
+  position: relative;
+  z-index: 1;
+}
+
 .noise-layer {
   pointer-events: none;
   position: absolute;
@@ -130,6 +181,36 @@ body {
     opacity: 1;
     transform: translateY(0);
     filter: blur(0);
+  }
+}
+
+@keyframes postHeroMesh {
+  0% {
+    background-position:
+      0% 0%,
+      0% 0%,
+      0% 0%,
+      0% 0%,
+      0% 0%;
+    transform: translate3d(-1.5%, -0.8%, 0) scale(1.08);
+  }
+  50% {
+    background-position:
+      7% 3%,
+      -5% 4%,
+      3% -5%,
+      -4% 6%,
+      0% 0%;
+    transform: translate3d(1.2%, 0.8%, 0) scale(1.1);
+  }
+  100% {
+    background-position:
+      11% 6%,
+      -8% 7%,
+      6% -7%,
+      -7% 10%,
+      0% 0%;
+    transform: translate3d(0.8%, -1.2%, 0) scale(1.09);
   }
 }
 

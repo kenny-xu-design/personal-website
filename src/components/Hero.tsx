@@ -21,22 +21,22 @@ export default function Hero() {
       <div className="noise-layer" />
 
       <div className="relative z-10 mx-auto flex min-h-screen max-w-portfolio flex-col justify-between px-5 pb-8 pt-28 sm:px-8 md:pt-32 lg:px-12">
-        <div className="max-w-[1180px] animate-hero-reveal">
-          <div className="flex max-w-5xl items-start justify-between gap-8">
-            <p className="text-xs font-medium uppercase tracking-[0.35em] text-white/62">
+        <div className="w-full">
+          <div className="flex w-full items-start justify-between gap-8">
+            <p data-hero-kicker className="text-xs font-medium uppercase tracking-[0.35em] text-white/62">
               [Portfolio]
             </p>
-            <p className="hidden text-xs font-medium uppercase tracking-[0.32em] text-white/62 md:block">
+            <p data-hero-kicker className="hidden text-right text-xs font-medium uppercase tracking-[0.32em] text-white/62 md:block">
               [Industrial Designer]
             </p>
           </div>
-          <h1 className="mt-5 font-display text-[clamp(2.4rem,6.6vw,7.4rem)] font-black uppercase leading-[0.78] text-ember-500">
+          <h1 data-hero-title className="mt-5 font-display text-[clamp(2.4rem,6.6vw,7.4rem)] font-black uppercase leading-[0.78] text-ember-500">
             XUMENGLE
           </h1>
-          <p className="mt-7 max-w-2xl text-base leading-8 text-white/[0.72] md:text-xl">
+          <p data-hero-copy className="mt-7 max-w-2xl text-base leading-8 text-white/[0.72] md:text-xl">
             {"\u4ee5\u4ea7\u54c1\u8bbe\u8ba1\u3001AI \u4ea4\u4e92\u4e0e\u89c6\u89c9\u8868\u8fbe\uff0c\u63a2\u7d22\u66f4\u6709\u8fa8\u8bc6\u5ea6\u7684\u4ea7\u54c1\u4f53\u9a8c\u3002"}
           </p>
-          <div className="mt-8 flex flex-wrap gap-3">
+          <div data-hero-tags className="mt-8 flex flex-wrap gap-3">
             {tags.map((tag) => (
               <span
                 key={tag}
@@ -52,7 +52,8 @@ export default function Hero() {
           {previewProjects.map((project, index) => (
             <a
               key={project.id}
-              href="#work"
+              href={`#work-${project.id}`}
+              data-hero-project
               className="group overflow-hidden rounded-[28px] border border-white/10 bg-white/[0.045] p-3 backdrop-blur-2xl transition duration-300 hover:-translate-y-1 hover:border-ember-500/60 hover:shadow-ember"
             >
               <div className="flex items-center gap-4">

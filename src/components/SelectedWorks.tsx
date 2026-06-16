@@ -4,7 +4,7 @@ import SectionTitle from "./SectionTitle";
 
 export default function SelectedWorks() {
   return (
-    <section id="work" className="relative overflow-hidden bg-ink-950 py-28 md:py-36">
+    <section id="work" data-section className="relative overflow-hidden bg-transparent py-28 md:py-36">
       <div className="absolute right-[-18rem] top-48 h-[34rem] w-[34rem] rounded-full bg-ember-500/10 blur-[140px]" />
       <div className="mx-auto max-w-portfolio px-5 sm:px-8 lg:px-12">
         <div className="flex flex-col justify-between gap-8 lg:flex-row lg:items-end">

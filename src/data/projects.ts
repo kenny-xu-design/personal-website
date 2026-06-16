@@ -43,7 +43,7 @@ export const projects: Project[] = [
     type: "Inclusive Design / Product Design",
     description:
       "面向手部障碍人群设计辅助握持剃须产品，提升日常清洁场景中的操作便利性与使用尊严。",
-    image: "/images/project-razor.jpg",
+    image: "/images/project-razor.png",
     tags: ["Inclusive", "Ergonomics", "Daily Care"],
   },
   {

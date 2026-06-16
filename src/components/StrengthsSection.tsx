@@ -3,7 +3,7 @@ import SectionTitle from "./SectionTitle";
 
 export default function StrengthsSection() {
   return (
-    <section id="strengths" className="relative overflow-hidden bg-ink-900 py-28 md:py-36">
+    <section id="strengths" data-section className="relative overflow-hidden bg-transparent py-28 md:py-36">
       <div className="absolute left-1/2 top-40 h-[38rem] w-[38rem] -translate-x-1/2 rounded-full bg-ember-gold/[0.08] blur-[150px]" />
       <div className="mx-auto max-w-portfolio px-5 sm:px-8 lg:px-12">
         <SectionTitle eyebrow="Core Strengths" title="个人优势" align="center" />
@@ -12,6 +12,7 @@ export default function StrengthsSection() {
           {strengths.map((strength, index) => (
             <article
               key={strength.title}
+              data-stagger-card
               className={`group relative overflow-hidden rounded-[32px] border p-7 transition duration-300 hover:-translate-y-1 ${
                 strength.accent
                   ? "border-ember-400/[0.35] bg-[linear-gradient(135deg,#FF7A1A,#FFB347)] text-black shadow-ember-strong"
