@@ -42,9 +42,11 @@ export default function AboutSection() {
               <div className="absolute inset-x-10 bottom-8 h-40 rounded-full bg-ember-500/[0.18] blur-3xl" />
               <div data-image-reveal className="relative h-full overflow-hidden rounded-[26px] bg-black">
                 <img
-                  src="/images/avatar.png"
+                  src="/images/avatar.webp"
                   alt="XUMENGLE portrait"
                   data-parallax-image
+                  loading="lazy"
+                  decoding="async"
                   className="h-full w-full object-contain opacity-0 transition duration-700"
                   onLoad={(event) => event.currentTarget.classList.remove("opacity-0")}
                 />

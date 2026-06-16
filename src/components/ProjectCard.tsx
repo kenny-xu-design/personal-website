@@ -17,6 +17,8 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
           src={project.image}
           alt={project.title}
           data-parallax-image
+          loading="lazy"
+          decoding="async"
           className="h-full w-full object-cover opacity-0 transition duration-700 group-hover:scale-[1.04]"
           onLoad={(event) => event.currentTarget.classList.remove("opacity-0")}
         />

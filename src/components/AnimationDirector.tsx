@@ -9,6 +9,9 @@ export default function AnimationDirector() {
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (reduceMotion) return undefined;
 
+    const enableParallax = window.matchMedia("(min-width: 1024px)").matches;
+    ScrollTrigger.config({ ignoreMobileResize: true });
+
     const ctx = gsap.context(() => {
       gsap.set("[data-opening-panel]", { yPercent: 0 });
       gsap.set("[data-hero-title]", {
@@ -133,23 +136,25 @@ export default function AnimationDirector() {
           );
         });
 
-        parallaxImages.forEach((image) => {
-          gsap.fromTo(
-            image,
-            { yPercent: -4, scale: 1.08 },
-            {
-              yPercent: 4,
-              scale: 1.12,
-              ease: "none",
-              scrollTrigger: {
-                trigger: image,
-                start: "top bottom",
-                end: "bottom top",
-                scrub: 0.8,
+        if (enableParallax) {
+          parallaxImages.forEach((image) => {
+            gsap.fromTo(
+              image,
+              { yPercent: -3, scale: 1.04 },
+              {
+                yPercent: 3,
+                scale: 1.07,
+                ease: "none",
+                scrollTrigger: {
+                  trigger: image,
+                  start: "top bottom",
+                  end: "bottom top",
+                  scrub: 1.1,
+                },
               },
-            },
-          );
-        });
+            );
+          });
+        }
       });
     });
 

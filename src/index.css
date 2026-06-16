@@ -72,6 +72,7 @@ body {
 
 .post-hero-bg {
   isolation: isolate;
+  contain: paint;
   background:
     linear-gradient(180deg, #030407 0%, #050608 38%, #020306 100%);
 }
@@ -96,6 +97,7 @@ body {
   filter: saturate(1.08);
   transform: translate3d(0, 0, 0) scale(1.08);
   animation: postHeroMesh 22s cubic-bezier(0.45, 0, 0.18, 1) infinite alternate;
+  will-change: transform, background-position;
 }
 
 .post-hero-bg::after {
@@ -222,5 +224,14 @@ body {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .post-hero-bg::before {
+    animation: none;
+    opacity: 0.72;
+    transform: none;
+    will-change: auto;
   }
 }

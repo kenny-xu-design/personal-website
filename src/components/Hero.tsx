@@ -1,19 +1,35 @@
+import { useEffect, useState } from "react";
 import { projects } from "../data/projects";
 
 const tags = ["Industrial Design", "Product Design", "AI Design", "3D Visualization"];
 
 export default function Hero() {
+  const [videoReady, setVideoReady] = useState(false);
   const previewProjects = projects.slice(0, 3);
+
+  useEffect(() => {
+    const loadVideo = () => setVideoReady(true);
+    const idleId =
+      "requestIdleCallback" in window
+        ? window.requestIdleCallback(loadVideo, { timeout: 2200 })
+        : window.setTimeout(loadVideo, 1400);
+
+    return () => {
+      if ("cancelIdleCallback" in window && typeof idleId === "number") window.cancelIdleCallback(idleId);
+      else window.clearTimeout(idleId as number);
+    };
+  }, []);
 
   return (
     <section id="hero" className="relative min-h-screen overflow-hidden bg-hero-fallback">
       <video
         className="absolute inset-0 hidden h-full w-full object-cover opacity-35 md:block"
-        src="/videos/hero-bg.mp4"
+        src={videoReady ? "/videos/hero-bg.mp4" : undefined}
         autoPlay
         muted
         loop
         playsInline
+        preload="none"
       />
       <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(3,4,7,0.98)_0%,rgba(3,4,7,0.82)_46%,rgba(3,4,7,0.62)_100%)]" />
       <div className="absolute bottom-[-18%] right-[-6%] h-[52rem] w-[52rem] rounded-full bg-ember-500/[0.18] blur-[150px]" />
@@ -59,8 +75,9 @@ export default function Hero() {
               <div className="flex items-center gap-4">
                 <div className="relative h-20 w-24 shrink-0 overflow-hidden rounded-2xl bg-project-placeholder">
                   <img
-                    src={project.image}
+                    src={project.thumbnail ?? project.image}
                     alt={project.title}
+                    decoding="async"
                     className="h-full w-full object-cover opacity-0 transition duration-500 group-hover:scale-105"
                     onLoad={(event) => event.currentTarget.classList.remove("opacity-0")}
                   />
