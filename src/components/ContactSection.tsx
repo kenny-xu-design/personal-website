@@ -16,9 +16,9 @@ export default function ContactSection() {
         </p>
 
         <div className="mt-12 grid max-w-4xl gap-3 md:grid-cols-3">
-          <a href="mailto:paydowilly@gmail.com" className="glass-card rounded-[28px] p-5 hover:text-ember-400">
+          <a href="mailto:XML_Design@163.com" className="glass-card rounded-[28px] p-5 hover:text-ember-400">
             <p className="text-xs uppercase tracking-[0.28em] text-white/[0.36]">Email</p>
-            <p className="mt-3 text-sm text-white/[0.76]">XML_DS@163.com</p>
+            <p className="mt-3 text-sm text-white/[0.76]">XML_Design@163.com</p>
           </a>
           <div className="glass-card rounded-[28px] p-5">
             <p className="text-xs uppercase tracking-[0.28em] text-white/[0.36]">WeChat</p>
@@ -32,7 +32,7 @@ export default function ContactSection() {
 
         <div className="mt-10 flex flex-wrap gap-4">
           <a
-            href="mailto:paydowilly@gmail.com"
+            href="mailto:XML_Design@163.com"
             className="rounded-full bg-white px-7 py-4 text-sm font-semibold text-black transition duration-300 hover:-translate-y-1 hover:bg-ember-500 hover:text-white hover:shadow-ember"
           >
             Send Email

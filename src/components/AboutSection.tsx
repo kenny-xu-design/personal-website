@@ -10,7 +10,7 @@ const stats = [
 const info = [
   { label: "Identity", value: "Industrial Designer / Product Designer" },
   { label: "Focus", value: "AI Hardware / Companion Robot / CMF / Brand Visual" },
-  { label: "Email", value: "paydowilly@gmail.com", href: "mailto:paydowilly@gmail.com" },
+  { label: "Email", value: "XML_Design@163.com", href: "mailto:XML_Design@163.com" },
   { label: "Location", value: "China / Japan" },
 ];
 
@@ -22,7 +22,7 @@ export default function AboutSection() {
         <SectionTitle eyebrow="About / Experience" title="Hi, I am Willy." />
 
         <div className="mt-14 grid gap-8 lg:grid-cols-[0.86fr_1.14fr]">
-          <div className="glass-card group relative min-h-[520px] overflow-hidden rounded-[32px] p-4">
+          <div className="glass-card group relative min-h-[360px] overflow-hidden rounded-[32px] p-4 lg:min-h-[420px]">
             <div className="absolute inset-x-10 bottom-8 h-40 rounded-full bg-ember-500/[0.18] blur-3xl" />
             <div className="relative h-full overflow-hidden rounded-[26px] bg-avatar-placeholder">
               <img

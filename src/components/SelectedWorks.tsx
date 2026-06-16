@@ -14,9 +14,9 @@ export default function SelectedWorks() {
           </p>
         </div>
 
-        <div className="mt-14 grid gap-5 lg:grid-cols-2 xl:grid-cols-3">
-          {projects.map((project) => (
-            <ProjectCard key={project.id} project={project} />
+        <div className="mt-14 grid gap-6">
+          {projects.map((project, index) => (
+            <ProjectCard key={project.id} project={project} index={index} />
           ))}
         </div>
       </div>
