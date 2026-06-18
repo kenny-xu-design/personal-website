@@ -57,6 +57,7 @@ export const projects: Project[] = [
     description:
       "面向手部障碍人群设计辅助握持剃须产品，提升日常清洁场景中的操作便利性与使用尊严。",
     image: "/images/project-razor.webp",
+    detailImage: "/images/care-plus-detail.webp",
     tags: ["Inclusive", "Ergonomics", "Daily Care"],
   },
   {
@@ -75,6 +76,11 @@ export const projects: Project[] = [
     description:
       "基于宋代美学与青瓷釉色构建展览主视觉，探索传统器物美学在当代视觉系统中的转译。",
     image: "/images/project-longquan.webp",
+    pdfUrl: "/pdf/longquan-celadon.pdf",
+    previewImages: Array.from(
+      { length: 22 },
+      (_, index) => `/images/longquan-pages/page-${String(index + 1).padStart(2, "0")}.webp`,
+    ),
     tags: ["Exhibition", "Poster", "Culture"],
   },
 ];

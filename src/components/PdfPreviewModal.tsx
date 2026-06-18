@@ -121,7 +121,9 @@ export default function PdfPreviewModal({ project, onClose }: PdfPreviewModalPro
 
         <div className="flex h-[82px] shrink-0 items-center gap-2 border-t border-white/[0.1] bg-[#08090c] px-3 py-2 md:h-[104px] md:gap-3 md:px-5 md:py-3">
           <div className="hidden w-28 shrink-0 md:block">
-            <p className="text-[0.58rem] font-semibold uppercase tracking-[0.28em] text-[#ff9a2d]">LUMI Case</p>
+            <p className="truncate text-[0.58rem] font-semibold uppercase tracking-[0.28em] text-[#ff9a2d]">
+              {project.id === "lumi" ? "LUMI Case" : "Project Case"}
+            </p>
             <p className="mt-1 text-sm font-semibold text-white">
               {String(activeIndex + 1).padStart(2, "0")} / {String(images.length).padStart(2, "0")}
             </p>

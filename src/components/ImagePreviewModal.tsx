@@ -18,8 +18,12 @@ export default function ImagePreviewModal({ project, onClose }: ImagePreviewModa
       role="dialog"
       aria-modal="true"
       aria-label={`${project.title} image preview`}
+      onMouseDown={onClose}
     >
-      <div className="mx-auto flex h-full max-w-portfolio flex-col overflow-hidden rounded-[28px] border border-white/15 bg-[#050609] shadow-[0_32px_120px_rgba(0,0,0,0.72)]">
+      <div
+        className="project-modal-panel mx-auto flex h-full max-w-portfolio flex-col overflow-hidden rounded-[28px] border border-white/15 bg-[#050609] shadow-[0_32px_120px_rgba(0,0,0,0.72)]"
+        onMouseDown={(event) => event.stopPropagation()}
+      >
         <div className="flex flex-wrap items-center justify-between gap-3 border-b border-white/10 bg-black/55 px-4 py-3 md:px-6">
           <div className="min-w-0">
             <p className="text-xs uppercase tracking-[0.34em] text-ember-400">Project Preview</p>
