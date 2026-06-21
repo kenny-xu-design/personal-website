@@ -3,12 +3,12 @@ import SectionTitle from "./SectionTitle";
 
 export default function StrengthsSection() {
   return (
-    <section id="strengths" data-section className="relative overflow-hidden bg-transparent py-28 md:py-36">
+    <section id="strengths" data-section className="relative scroll-mt-32 overflow-hidden bg-transparent py-20 md:scroll-mt-28 md:py-36">
       <div className="absolute left-1/2 top-40 h-[38rem] w-[38rem] -translate-x-1/2 rounded-full bg-ember-gold/[0.08] blur-[150px]" />
       <div className="mx-auto max-w-portfolio px-5 sm:px-8 lg:px-12">
-        <SectionTitle eyebrow="Core Strengths" title="个人优势" align="center" />
+        <SectionTitle eyebrow="核心能力 / Core Strengths" title="个人优势" align="center" />
 
-        <div className="mt-14 grid auto-rows-[minmax(260px,auto)] gap-5 md:grid-cols-2 xl:grid-cols-4">
+        <div className="mt-10 grid auto-rows-[minmax(230px,auto)] gap-4 md:mt-14 md:grid-cols-2 md:gap-5 xl:grid-cols-4">
           {strengths.map((strength, index) => (
             <article
               key={strength.title}

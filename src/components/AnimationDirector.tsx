@@ -1,18 +1,24 @@
 import { useEffect } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
 
 export default function AnimationDirector() {
   useEffect(() => {
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (reduceMotion) return undefined;
 
-    const enableParallax = window.matchMedia("(min-width: 1024px)").matches;
-    ScrollTrigger.config({ ignoreMobileResize: true });
+    let cancelled = false;
+    let cleanupAnimation: (() => void) | undefined;
 
-    const ctx = gsap.context(() => {
+    void Promise.all([import("gsap"), import("gsap/ScrollTrigger")]).then(
+      ([gsapModule, scrollTriggerModule]) => {
+        if (cancelled) return;
+
+        const gsap = gsapModule.default;
+        const { ScrollTrigger } = scrollTriggerModule;
+        const enableParallax = window.matchMedia("(min-width: 1024px)").matches;
+        gsap.registerPlugin(ScrollTrigger);
+        ScrollTrigger.config({ ignoreMobileResize: true });
+
+        const ctx = gsap.context(() => {
       gsap.set("[data-opening-panel]", { yPercent: 0 });
       gsap.set("[data-hero-title]", {
         clipPath: "inset(0 100% 0 0)",
@@ -156,9 +162,16 @@ export default function AnimationDirector() {
           });
         }
       });
-    });
+        });
 
-    return () => ctx.revert();
+        cleanupAnimation = () => ctx.revert();
+      },
+    );
+
+    return () => {
+      cancelled = true;
+      cleanupAnimation?.();
+    };
   }, []);
 
   return (

@@ -11,7 +11,7 @@ export default function ScrollProgress() {
       const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
       const progress = maxScroll > 0 ? window.scrollY / maxScroll : 0;
       if (barRef.current) {
-        barRef.current.style.height = `${Math.max(progress * 100, 4)}%`;
+        barRef.current.style.transform = `scaleY(${Math.max(progress, 0.04)})`;
       }
     };
 
@@ -35,8 +35,8 @@ export default function ScrollProgress() {
     <div className="fixed right-4 top-1/2 z-50 hidden h-48 w-px -translate-y-1/2 bg-white/10 md:block">
       <div
         ref={barRef}
-        className="w-full rounded-full bg-ember-500 shadow-ember transition-[height] duration-150"
-        style={{ height: "4%" }}
+        className="h-full w-full origin-top rounded-full bg-ember-500 shadow-ember"
+        style={{ transform: "scaleY(0.04)" }}
       />
     </div>
   );
