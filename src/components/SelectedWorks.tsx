@@ -3,12 +3,12 @@ import { projects } from "../data/projects";
 import type { Project } from "../data/projects";
 import ImagePreviewModal from "./ImagePreviewModal";
 import PdfPreviewModal from "./PdfPreviewModal";
-import ProjectCard from "./ProjectCard";
+import ProjectWheel from "./ProjectWheel";
 import SectionTitle from "./SectionTitle";
 
 const workProjects = [
-  ...projects.filter((project) => project.id !== "local-ai-workflow"),
-  ...projects.filter((project) => project.id === "local-ai-workflow"),
+  ...projects.filter((project) => project.id !== "video-insight"),
+  ...projects.filter((project) => project.id === "video-insight"),
 ];
 
 export default function SelectedWorks() {
@@ -31,6 +31,14 @@ export default function SelectedWorks() {
     };
   }, [previewProject]);
 
+  const openProject = (project: Project) => {
+    if (project.href) {
+      window.location.href = project.href;
+      return;
+    }
+    if (project.pdfUrl || project.detailImage) setPreviewProject(project);
+  };
+
   return (
     <>
       <section id="work" data-section className="relative scroll-mt-32 overflow-hidden bg-transparent py-20 md:scroll-mt-28 md:py-36">
@@ -43,11 +51,7 @@ export default function SelectedWorks() {
             </p>
           </div>
 
-          <div className="mt-10 grid gap-5 md:mt-14 md:gap-6">
-            {workProjects.map((project, index) => (
-              <ProjectCard key={project.id} project={project} index={index} onPreview={setPreviewProject} />
-            ))}
-          </div>
+          <ProjectWheel projects={workProjects} onOpen={openProject} />
         </div>
       </section>
 

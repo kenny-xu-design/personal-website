@@ -9,7 +9,10 @@ export default function Hero() {
   const [showHeroVideo, setShowHeroVideo] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const modalVideoRef = useRef<HTMLVideoElement>(null);
-  const previewProjects = projects.slice(0, 3);
+  const previewProjects = [
+    ...projects.slice(0, 2),
+    projects.find((project) => project.id === "tomatodesk"),
+  ].filter((project): project is (typeof projects)[number] => Boolean(project));
 
   useEffect(() => {
     const desktopQuery = window.matchMedia("(min-width: 768px)");

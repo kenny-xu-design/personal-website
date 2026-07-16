@@ -6,8 +6,16 @@ import Hero from "./components/Hero";
 import ScrollProgress from "./components/ScrollProgress";
 import SelectedWorks from "./components/SelectedWorks";
 import StrengthsSection from "./components/StrengthsSection";
+import TomatoDeskProject from "./components/TomatoDeskProject";
+import VideoInsightProject from "./components/VideoInsightProject";
 
 export default function App() {
+  if (window.location.pathname.replace(/\/$/, "") === "/projects/tomatodesk") {
+    return <TomatoDeskProject />;
+  }
+  if (window.location.pathname.replace(/\/$/, "") === "/projects/video-insight") {
+    return <VideoInsightProject />;
+  }
   return (
     <main className="min-h-screen overflow-x-hidden bg-ink-950 text-white">
       <ScrollProgress />

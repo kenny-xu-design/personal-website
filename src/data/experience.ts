@@ -12,8 +12,8 @@ export const experience: Experience[] = [
   },
   {
     year: "2025",
-    title: "Teahood 吃茶品牌生态设计",
-    note: "品牌与包装设计",
+    title: "杭州顾道设计",
+    note: "设计助理实习 · 3个月",
   },
   {
     year: "2024",

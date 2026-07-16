@@ -7,19 +7,24 @@ type ProjectCardProps = {
 };
 
 export default function ProjectCard({ project, index, onPreview }: ProjectCardProps) {
-  const isPreviewable = Boolean(project.pdfUrl || project.detailImage);
+  const isPreviewable = Boolean(project.pdfUrl || project.detailImage || project.href);
   const actionClassName =
     "rounded-full border border-white/[0.12] px-5 py-3 transition duration-300 group-hover:border-ember-500/70 group-hover:text-ember-400";
   const arrowClassName =
     "grid h-11 w-11 place-items-center rounded-full bg-white/[0.08] text-xl transition duration-300 group-hover:translate-x-1 group-hover:bg-ember-500 group-hover:text-white";
   const handlePreview = () => {
+    if (project.href) {
+      window.location.href = project.href;
+      return;
+    }
     if (isPreviewable) onPreview?.(project);
   };
   const handlePreviewKeyDown = (event: React.KeyboardEvent<HTMLElement>) => {
     if (!isPreviewable) return;
     if (event.key === "Enter" || event.key === " ") {
       event.preventDefault();
-      onPreview?.(project);
+      if (project.href) window.location.href = project.href;
+      else onPreview?.(project);
     }
   };
 

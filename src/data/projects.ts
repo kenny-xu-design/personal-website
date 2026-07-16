@@ -9,6 +9,7 @@ export type Project = {
   pdfUrl?: string;
   previewImages?: string[];
   detailImage?: string;
+  href?: string;
   tags: string[];
   featured?: boolean;
 };
@@ -31,14 +32,15 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    id: "local-ai-workflow",
-    title: "本地化 AI 工作流平台",
-    type: "AI 智能体 / 本地工作流 / Web 界面",
+    id: "video-insight",
+    title: "视频内容解析与知识沉淀系统",
+    titleLines: ["视频内容解析", "与知识沉淀系统"],
+    type: "AI 产品 / 视频解析 / 知识管理",
     description:
-      "自建 Agent + Web UI 工作流平台，支持多模型切换、长记忆协作与本地数据留存，构建更自由可控的个人 AI 系统。",
-    image: "/images/project-ai-workflow.webp",
-    thumbnail: "/images/project-ai-workflow-thumb.webp",
-    tags: ["AI 智能体", "Web 界面", "工作流"],
+      "将长视频转化为带时间戳的字幕、摘要、高光与结构化笔记，并沉淀至个人知识库。",
+    image: "/images/project-video-insight.png",
+    href: "/projects/video-insight",
+    tags: ["视频解析", "知识管理", "AI 产品"],
   },
   {
     id: "fitness-master",
@@ -85,17 +87,13 @@ export const projects: Project[] = [
     tags: ["品牌设计", "包装设计", "视觉设计"],
   },
   {
-    id: "longquan",
-    title: "龙泉青瓷展览视觉设计",
-    type: "展览视觉 / 海报设计",
+    id: "tomatodesk",
+    title: "TomatoDesk",
+    type: "桌面效率工具 / AI 产品实践",
     description:
-      "基于宋代美学与青瓷釉色构建展览主视觉，探索传统器物美学在当代视觉系统中的转译。",
-    image: "/images/project-longquan.webp",
-    pdfUrl: "/pdf/longquan-celadon.pdf",
-    previewImages: Array.from(
-      { length: 22 },
-      (_, index) => `/images/longquan-pages/page-${String(index + 1).padStart(2, "0")}.webp`,
-    ),
-    tags: ["展览设计", "海报设计", "文化创意"],
+      "融合番茄钟、任务管理与成果记录的桌面效率工具，建立从计划、执行到归档的专注工作闭环。",
+    image: "/images/project-tomatodesk.png",
+    href: "/projects/tomatodesk",
+    tags: ["效率工具", "Tauri", "AI 辅助开发"],
   },
 ];
