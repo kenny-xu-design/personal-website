@@ -76,6 +76,25 @@ export default function LabsSection() {
                       </span>
                     ))}
                   </div>
+                  {lab.url ? (
+                    <a
+                      href={lab.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="mt-5 inline-flex w-fit items-center gap-2 rounded-full border border-ember-400/35 bg-ember-500/[0.1] px-4 py-2 text-xs font-semibold text-ember-300 transition hover:border-ember-400/70 hover:bg-ember-500/20 hover:text-white"
+                    >
+                      访问网页 <span aria-hidden="true">↗</span>
+                    </a>
+                  ) : null}
+                  {lab.id === "sugar-care" ? (
+                    <button
+                      type="button"
+                      className="mt-5 inline-flex w-fit items-center gap-2 rounded-full border border-ember-400/35 bg-ember-500/[0.1] px-4 py-2 text-xs font-semibold text-ember-300 transition hover:border-ember-400/70 hover:bg-ember-500/20 hover:text-white"
+                      onClick={() => setActiveLabId(lab.id)}
+                    >
+                      查看渲染图 <span aria-hidden="true">↗</span>
+                    </button>
+                  ) : null}
                 </div>
               </div>
             </article>

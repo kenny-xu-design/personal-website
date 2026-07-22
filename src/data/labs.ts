@@ -6,6 +6,7 @@ export type Lab = {
   icon: string;
   status: "原型完成" | "已完成";
   image?: string;
+  url?: string;
 };
 
 export const labs: Lab[] = [
@@ -26,6 +27,7 @@ export const labs: Lab[] = [
     icon: "DL",
     status: "已完成",
     image: "/images/labs/chrome-download-router.png",
+    url: "https://github.com/kenny-xu-design/cent-download-router",
   },
   {
     id: "sugar-care",
@@ -44,5 +46,15 @@ export const labs: Lab[] = [
     icon: "M5",
     status: "原型完成",
     image: "/images/labs/m5-ai-dashboard.png",
+  },
+  {
+    id: "focus-lab",
+    title: "Focus Lab",
+    description: "面向学习、写作、设计与深度工作的专注力训练工具箱。",
+    tags: ["Focus Tool", "Productivity", "Web App"],
+    icon: "FL",
+    status: "原型完成",
+    image: "/images/labs/focus-lab.png",
+    url: "https://focus-lab-cus.pages.dev/",
   },
 ];
