@@ -2,16 +2,16 @@ import { experience } from "../data/experience";
 import BorderGlow from "./BorderGlow";
 
 const stats = [
-  { value: "8+", label: "设计项目" },
-  { value: "30+", label: "产品渲染图" },
-  { value: "499+", label: "素材与灵感积累" },
+  { value: "8+", label: "完整设计项目" },
+  { value: "3+", label: "AI 产品实践" },
+  { value: "6", label: "全流程综合能力" },
 ];
 
 const info = [
   { label: "Identity", value: "工业设计师 / 产品设计师" },
-  { label: "Focus", value: "AI 硬件 / 陪伴机器人 / CMF / 品牌视觉" },
-  { label: "Email", value: "XML_Design@163.com", href: "mailto:XML_Design@163.com" },
-  { label: "Location", value: "杭州 / 成都" },
+  { label: "Focus", value: "智能硬件 / AI 产品 / 产品体验" },
+  { label: "Email", value: "Kenny-xu@Foxmail.com", href: "mailto:Kenny-xu@Foxmail.com" },
+  { label: "Location", value: "成都" },
 ];
 
 const glowProps = {
@@ -31,7 +31,7 @@ export default function AboutSection() {
       <div className="absolute right-[-8rem] bottom-24 h-80 w-80 rounded-full bg-ember-500/6 blur-[130px]" />
 
       <div className="about-screen mx-auto max-w-portfolio px-5 sm:px-8 lg:px-12">
-        <div className="about-layout grid gap-8 lg:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] lg:items-stretch">
+        <div className="about-layout grid gap-8 lg:grid-cols-[minmax(0,31fr)_minmax(0,69fr)] lg:items-stretch">
           <BorderGlow
             data-stagger-card
             className="about-portrait-card group min-h-[520px] overflow-hidden"
@@ -68,7 +68,16 @@ export default function AboutSection() {
           <div className="about-content flex flex-col gap-8">
             <div className="about-heading shrink-0 pt-1">
               <p data-section-eyebrow className="mb-4 text-xs font-semibold uppercase tracking-[0.45em] text-ember-400">关于我 / About</p>
-              <h2 data-section-title className="about-title font-black uppercase text-white">Hi, I am<br />XUMENGLE.</h2>
+              <div className="about-title-row flex flex-wrap items-end justify-between gap-x-6 gap-y-3">
+                <h2 data-section-title className="about-title font-black uppercase text-white">I’M XUMENGLE.</h2>
+                <a
+                  href="/resume/xumengle-resume.pdf"
+                  download="xumengle-resume.pdf"
+                  className="about-resume-link inline-flex shrink-0 items-center gap-2 rounded-full border border-ember-500/35 bg-ember-500/[0.08] px-4 py-2 text-xs font-semibold text-ember-300 transition hover:border-ember-400 hover:bg-ember-500/15 hover:text-white"
+                >
+                  下载简历 PDF <span aria-hidden="true">↓</span>
+                </a>
+              </div>
             </div>
 
             <BorderGlow
@@ -84,7 +93,7 @@ export default function AboutSection() {
               <div className="about-info-inner flex h-full flex-col justify-between p-6 sm:p-7 md:p-9">
                 <div className="about-info-main space-y-8">
                   <p className="about-copy max-w-4xl text-[1.08rem] leading-8 text-white/72 sm:text-[1.18rem] sm:leading-9 md:text-[1.35rem] md:leading-10">
-                我是一名工业设计 / AI 产品方向的设计师，具备从用户调研、概念设定、造型推导、CMF、三维建模、产品渲染到原型制作的全流程推进能力，同时具备 AI Agent / Web UI 实践经验，能够将 AI 工具链融入设计分析、方案生成与体验验证过程。
+                我是一名工业设计与 AI 产品方向的设计师，具备从用户研究、需求定义、概念设计、造型与 CMF、三维建模到原型验证的完整实践能力。同时具备 AI Agent、Web UI 与 AI 辅助开发设计经验，能够将设计思考转化为兼顾实体产品、数字交互与系统体验的可验证方案。
                   </p>
 
                   <div className="about-info-grid grid gap-3 md:grid-cols-2">
@@ -140,9 +149,7 @@ export default function AboutSection() {
           </div>
         </div>
 
-      </div>
-
-      <div className="experience-section mx-auto max-w-portfolio px-5 pb-20 pt-10 sm:px-8 md:pb-32 lg:px-12">
+        <div className="experience-section">
           <BorderGlow
             data-stagger-card
             backgroundColor="#08090d"
@@ -152,13 +159,13 @@ export default function AboutSection() {
             glowIntensity={0.66}
             {...glowProps}
           >
-            <div className="p-6 sm:p-7 lg:p-8">
+            <div className="experience-inner p-6 sm:p-7 lg:p-8">
             <div className="mb-5 flex items-end justify-between gap-4">
               <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.42em] text-white/34">PROJECT EXPERIENCE</p>
-                <p className="mt-3 text-2xl font-semibold text-white/80 sm:text-3xl">项目经历</p>
+                <p className="experience-title text-2xl font-semibold text-white/80 sm:text-3xl">项目经历</p>
+                <p className="experience-eyebrow text-xs font-semibold uppercase tracking-[0.42em] text-white/34">PROJECT EXPERIENCE</p>
               </div>
-              <p className="hidden text-sm text-white/36 md:block">横向时间轴</p>
+              <p className="experience-timeline-label hidden text-white/36 md:block">横向时间轴</p>
             </div>
 
             <div className="relative">
@@ -176,6 +183,7 @@ export default function AboutSection() {
             </div>
             </div>
           </BorderGlow>
+        </div>
       </div>
     </section>
   );

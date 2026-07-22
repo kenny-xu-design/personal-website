@@ -33,6 +33,16 @@ export default function StrengthsSection() {
                   <p className={`mt-5 max-w-xl text-base leading-8 ${strength.accent ? "text-black/[0.68]" : "text-white/[0.58]"}`}>
                     {strength.description}
                   </p>
+                  <div className="mt-5 flex flex-wrap gap-2" aria-label={`${strength.title} 对应项目`}>
+                    {strength.projects.map((project) => (
+                      <span
+                        key={project}
+                        className={`rounded-full border px-3 py-1 text-xs font-medium ${strength.accent ? "border-black/15 bg-black/[0.06] text-black/[0.68]" : "border-white/10 bg-white/[0.04] text-white/55"}`}
+                      >
+                        {project}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
             </article>

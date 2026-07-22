@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { projects } from "../data/projects";
+import { PROJECT_WHEEL_GO_TO_EVENT } from "./useProjectWheel";
 
 const tags = ["工业设计", "产品设计", "AI 设计", "三维可视化"];
 
@@ -156,6 +157,13 @@ export default function Hero() {
               <a
                 key={project.id}
                 href={`#work-${project.id}`}
+                onClick={(event) => {
+                  event.preventDefault();
+                  window.history.replaceState(null, "", `#work-${project.id}`);
+                  window.dispatchEvent(new CustomEvent(PROJECT_WHEEL_GO_TO_EVENT, {
+                    detail: { projectId: project.id, behavior: "smooth" },
+                  }));
+                }}
                 data-hero-project
                 className="group w-[82vw] shrink-0 snap-center overflow-hidden rounded-[24px] border border-white/10 bg-white/[0.045] p-3 backdrop-blur-2xl transition duration-300 hover:-translate-y-1 hover:border-ember-500/60 hover:shadow-ember sm:w-auto sm:rounded-[28px]"
               >

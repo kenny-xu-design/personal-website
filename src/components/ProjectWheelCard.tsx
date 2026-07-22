@@ -35,6 +35,7 @@ export default function ProjectWheelCard({ project, index, isActive, setRef, onC
         <div>
           <p className="project-wheel-card__type">{project.type}</p>
           <h3>{project.title}</h3>
+          <p className="mt-2 text-xs leading-5 text-ember-300/80">职责：{project.role}</p>
           <p className="project-wheel-card__description">{project.description}</p>
         </div>
         <div className="project-wheel-card__footer">

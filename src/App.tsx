@@ -3,6 +3,7 @@ import AnimationDirector from "./components/AnimationDirector";
 import ContactSection from "./components/ContactSection";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
+import LabsSection from "./components/LabsSection";
 import ScrollProgress from "./components/ScrollProgress";
 import SelectedWorks from "./components/SelectedWorks";
 import StrengthsSection from "./components/StrengthsSection";
@@ -25,6 +26,7 @@ export default function App() {
       <div className="post-hero-bg relative overflow-hidden">
         <AboutSection />
         <SelectedWorks />
+        <LabsSection />
         <StrengthsSection />
         <ContactSection />
       </div>

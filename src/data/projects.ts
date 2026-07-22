@@ -11,6 +11,8 @@ export type Project = {
   detailImage?: string;
   href?: string;
   tags: string[];
+  category: "工业设计" | "AI 产品" | "品牌视觉";
+  role: string;
   featured?: boolean;
 };
 
@@ -29,6 +31,8 @@ export const projects: Project[] = [
       (_, index) => `/images/lumi-pages/page-${String(index + 1).padStart(2, "0")}.webp`,
     ),
     tags: ["AI 硬件", "陪伴机器人", "CMF 设计"],
+    category: "工业设计",
+    role: "产品定义 / 工业设计 / 交互系统",
     featured: true,
   },
   {
@@ -41,6 +45,8 @@ export const projects: Project[] = [
     image: "/images/project-video-insight.png",
     href: "/projects/video-insight",
     tags: ["视频解析", "知识管理", "AI 产品"],
+    category: "AI 产品",
+    role: "产品定义 / Agent 工作流 / Web UI",
   },
   {
     id: "fitness-master",
@@ -52,14 +58,13 @@ export const projects: Project[] = [
     image: "/images/project-fitness-master.webp",
     thumbnail: "/images/project-fitness-master-thumb.webp",
     pdfUrl: "/pdf/fitness-master-portfolio-v2.pdf",
-    previewImages: [
-      "/images/fitness-master-board.webp",
-      ...Array.from(
-        { length: 9 },
-        (_, index) => `/images/fitness-pages/page-${String(index + 1).padStart(2, "0")}.webp`,
-      ),
-    ],
+    previewImages: Array.from(
+      { length: 12 },
+      (_, index) => `/images/fitness-pages/page-${String(index + 1).padStart(2, "0")}.webp`,
+    ),
     tags: ["智能家居", "健身产品", "产品设计"],
+    category: "工业设计",
+    role: "产品系统 / 结构整合 / 场景设计",
   },
   {
     id: "inclusive-razor",
@@ -71,6 +76,8 @@ export const projects: Project[] = [
     image: "/images/project-razor.webp",
     detailImage: "/images/care-plus-detail.webp",
     tags: ["无障碍设计", "人机工学", "日常护理"],
+    category: "工业设计",
+    role: "用户研究 / 人机验证 / 产品设计",
   },
   {
     id: "teahood",
@@ -81,10 +88,12 @@ export const projects: Project[] = [
     image: "/images/project-teahood.webp",
     pdfUrl: "/pdf/teahood-brand-packaging.pdf",
     previewImages: Array.from(
-      { length: 14 },
+      { length: 13 },
       (_, index) => `/images/teahood-pages/page-${String(index + 1).padStart(2, "0")}.webp`,
     ),
     tags: ["品牌设计", "包装设计", "视觉设计"],
+    category: "品牌视觉",
+    role: "品牌系统 / 包装设计 / 视觉延展",
   },
   {
     id: "tomatodesk",
@@ -95,5 +104,7 @@ export const projects: Project[] = [
     image: "/images/project-tomatodesk.png",
     href: "/projects/tomatodesk",
     tags: ["效率工具", "Tauri", "AI 辅助开发"],
+    category: "AI 产品",
+    role: "产品架构 / 交互设计 / AI 辅助开发",
   },
 ];

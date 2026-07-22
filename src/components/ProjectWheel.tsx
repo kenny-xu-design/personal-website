@@ -11,7 +11,7 @@ export default function ProjectWheel({ projects, onOpen }: ProjectWheelProps) {
   const wheel = useProjectWheel({ projects, onOpen });
 
   return (
-    <div className="project-wheel-shell">
+    <div ref={wheel.shellRef} className="project-wheel-shell">
       <div className="project-wheel-toolbar" aria-live="polite">
         <p>拖动或滚动选择作品</p>
         <p><strong>{String(wheel.activeIndex + 1).padStart(2, "0")}</strong> / {String(projects.length).padStart(2, "0")}</p>

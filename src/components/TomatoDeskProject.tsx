@@ -79,7 +79,7 @@ export default function TomatoDeskProject() {
 
       <footer className="mx-auto flex max-w-portfolio flex-col gap-8 px-5 py-16 sm:px-8 md:flex-row md:items-center md:justify-between lg:px-12">
         <a href="/#work-tomatodesk" className="text-sm text-white/55 transition hover:text-white">← 返回全部作品</a>
-        <div className="flex gap-3"><a href="/#work-teahood" className="rounded-full border border-white/12 px-5 py-3 text-sm">上一个：Teahood</a><a href="/#work-local-ai-workflow" className="rounded-full bg-[#df5c3d] px-5 py-3 text-sm font-semibold">下一个：AI 工作流 →</a></div>
+        <div className="flex gap-3"><a href="/#work-teahood" className="rounded-full border border-white/12 px-5 py-3 text-sm">上一个：Teahood</a><a href="/#work-video-insight" className="rounded-full bg-[#df5c3d] px-5 py-3 text-sm font-semibold">下一个：Video Insight →</a></div>
       </footer>
     </main>
   );

@@ -12,38 +12,43 @@ export default function ContactSection() {
           <span className="block">SOMETHING MEANINGFUL.</span>
         </h2>
         <p data-stagger-card className="mt-8 max-w-2xl text-lg leading-9 text-white/[0.62]">
-          如果你对工业设计、AI 产品、品牌视觉或作品集合作感兴趣，可以通过以下方式联系我。
+          如果你正在寻找工业设计、AI 产品或智能硬件方向的设计合作与岗位人选，欢迎与我联系。
         </p>
 
-        <div className="mt-12 grid max-w-4xl gap-3 md:grid-cols-3">
-          <a data-stagger-card href="mailto:XML_Design@163.com" className="glass-card rounded-[28px] p-5 hover:text-ember-400">
-            <p className="text-xs uppercase tracking-[0.28em] text-white/[0.36]">邮箱</p>
-            <p className="mt-3 text-sm text-white/[0.76]">XML_Design@163.com</p>
+        <div className="mt-12 grid max-w-5xl gap-3 md:grid-cols-2 xl:grid-cols-4">
+          <a data-stagger-card href="mailto:Kenny-xu@Foxmail.com" className="glass-card rounded-[28px] p-5 hover:text-ember-400">
+            <p className="text-xs uppercase tracking-[0.28em] text-white/[0.36]">Email</p>
+            <p className="mt-3 text-sm text-white/[0.76]">Kenny-xu@Foxmail.com</p>
+          </a>
+          <a data-stagger-card href="https://github.com/kenny-xu-design" target="_blank" rel="noreferrer" className="glass-card rounded-[28px] p-5 hover:text-ember-400">
+            <p className="text-xs uppercase tracking-[0.28em] text-white/[0.36]">GitHub</p>
+            <p className="mt-3 text-sm text-white/[0.76]">kenny-xu-design</p>
           </a>
           <div data-stagger-card className="glass-card rounded-[28px] p-5">
-            <p className="text-xs uppercase tracking-[0.28em] text-white/[0.36]">微信</p>
-            <p className="mt-3 text-sm text-white/[0.76]">即将开放</p>
+            <p className="text-xs uppercase tracking-[0.28em] text-white/[0.36]">Work Intent</p>
+            <p className="mt-3 text-sm text-white/[0.76]">成都｜接受外地工作机会，可远程面试</p>
           </div>
-          <div data-stagger-card className="glass-card rounded-[28px] p-5">
-            <p className="text-xs uppercase tracking-[0.28em] text-white/[0.36]">作品集</p>
-            <p className="mt-3 text-sm text-white/[0.76]">即将开放</p>
-          </div>
+          <a data-stagger-card href="/resume/xumengle-resume.pdf" download="xumengle-resume.pdf" className="glass-card rounded-[28px] p-5 hover:text-ember-400">
+            <p className="text-xs uppercase tracking-[0.28em] text-white/[0.36]">Resume</p>
+            <p className="mt-3 text-sm text-white/[0.76]">下载简历 PDF</p>
+          </a>
         </div>
 
         <div className="mt-10 flex flex-wrap gap-4">
           <a
-            href="mailto:XML_Design@163.com"
+            href="mailto:Kenny-xu@Foxmail.com"
             data-stagger-card
             className="rounded-full bg-white px-7 py-4 text-sm font-semibold text-black transition duration-300 hover:-translate-y-1 hover:bg-ember-500 hover:text-white hover:shadow-ember"
           >
             发送邮件
           </a>
           <a
-            href="#work"
+            href="/resume/xumengle-resume.pdf"
+            download="xumengle-resume.pdf"
             data-stagger-card
             className="rounded-full border border-white/[0.12] px-7 py-4 text-sm font-semibold text-white transition duration-300 hover:-translate-y-1 hover:border-ember-500 hover:text-ember-400 hover:shadow-ember"
           >
-            查看作品
+            下载简历
           </a>
         </div>
       </div>

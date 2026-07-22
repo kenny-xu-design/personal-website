@@ -1,6 +1,7 @@
 export type Strength = {
   title: string;
   description: string;
+  projects: string[];
   accent?: boolean;
   wide?: boolean;
 };
@@ -8,24 +9,29 @@ export type Strength = {
 export const strengths: Strength[] = [
   {
     title: "产品系统设计能力",
-    description: "能够从用户需求、场景定位、功能结构到产品形态进行整体推导。",
+    description: "能够从用户需求、使用场景、功能结构到产品形态进行整体推导。",
+    projects: ["LUMI", "Fitness Master"],
     wide: true,
   },
   {
-    title: "AI 工作流与视觉提案能力",
-    description: "能够结合 AI 工具完成概念发散、图像生成、方案表达与效率提升。",
+    title: "AI 产品与 Agent 工作流",
+    description: "能够设计模型、工具、数据与交互之间的任务处理链路。",
+    projects: ["Video Insight", "TomatoDesk", "M5 AI Dashboard"],
     accent: true,
   },
   {
-    title: "Blender / KeyShot 产品渲染能力",
-    description: "能够完成产品建模、材质表现、灯光搭建和高质量视觉输出。",
+    title: "三维建模与视觉表达",
+    description: "具备产品建模、材质表现、灯光搭建与高质量视觉输出能力。",
+    projects: ["Fitness Master", "Care Plus", "LUMI"],
   },
   {
-    title: "品牌视觉与包装延展能力",
-    description: "能够围绕品牌定位完成视觉识别、包装设计和周边延展。",
+    title: "原型验证与落地能力",
+    description: "具备 FDM 3D 打印、结构验证、柔性材料和交互原型实践。",
+    projects: ["Care Plus", "LUMI", "M5 AI Dashboard"],
   },
   {
     title: "调研分析与设计叙事能力",
-    description: "能够将用户研究、竞品分析、设计策略转化为清晰的作品集表达。",
+    description: "能够将用户研究、竞品分析和产品策略转化为清晰的设计案例表达。",
+    projects: ["LUMI", "Video Insight", "Teahood"],
   },
 ];
